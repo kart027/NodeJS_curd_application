@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User mangment system</title>
+</head>
+<style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+  
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+  
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<body>
+    <center>
+        <div class="form">
+            <table >
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                  
+                </tr>
+                <% items.forEach((p)=>{ %>
+                    <tr>
+                        <td>
+                            <%=p.name %>
+                        </td>
+                        <td>
+                            <%=p.email %>
+                        </td>
+                        <td>
+                            <%=p.age %>
+                        </td>
+                        <td><a href="/post/update/<%= p._id %>">update</a></td>
+                        <td><a href="/post/delete/<%= p._id %>" >Delete</a></td>
+                     
+                    </tr>
+                    <% }) %>
+
+
+            </table>
+            <a href="/post/add_user">create new </a>
+        </div>
+    </center>
+</body>
+
+</html>
